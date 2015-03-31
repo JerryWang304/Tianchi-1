@@ -1,14 +1,17 @@
 package cn.edu.tju.tianchi.feature.profile.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cn.edu.tju.tianchi.feature.profile.IUserProfile;
 
 
 public class UserProfile implements IUserProfile {
 	
-	int id;
-	int click_count[];
-	
-	class Pair
+	int id;//用户ID
+	int click_count[];//四类动作的次数
+	List<Pair> pairs =new ArrayList<Pair>();
+	class Pair//对于每一个种类有这些东西
 	{
 		int item_category;
 		int count[];
@@ -24,5 +27,6 @@ public class UserProfile implements IUserProfile {
 				this.conversion[i]=conversion[i];
 		}
 	}
+	
 
 }
