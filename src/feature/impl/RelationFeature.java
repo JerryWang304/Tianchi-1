@@ -15,14 +15,14 @@ import feature.profile.IUserProfile;
 import feature.profile.impl.RelationProfile;
 
 /**
- * ÌáÈ¡ÓÃ»§ÉÌÆ·¹ØÏµÌØÕ÷
- * @author ³¯
+ * æå–ç”¨æˆ·å•†å“å…³ç³»ç‰¹å¾
+ * @author æœ
  * @version 1.0
  */
 public class RelationFeature implements IRelationFeature {
 
 	/**
-	 * µÃµ½Ïà¹ØÌØÕ÷
+	 * å¾—åˆ°ç›¸å…³ç‰¹å¾
 	 */
 	public List<RelationProfile> getRelationFeature(
 			List<UserItemRecord> userItemRecord, List<ItemRecord> itemRecord) {
@@ -32,8 +32,8 @@ public class RelationFeature implements IRelationFeature {
 			int user_id=record.getUser_id();
 			int item_id=record.getItem_id();
 			String key=String.valueOf(user_id)+";"+String.valueOf(item_id);
-			if(map.containsKey(key)){  //mapÀïÖ®Ç°ÒÑÓĞ´Ë¼ÇÂ¼
-				//*****µÃµ½ËÄÖÖÀàĞÍĞĞÎªµÄ´ÎÊı**************//
+			if(map.containsKey(key)){  //mapé‡Œä¹‹å‰å·²æœ‰æ­¤è®°å½•
+				//*****å¾—åˆ°å››ç§ç±»å‹è¡Œä¸ºçš„æ¬¡æ•°**************//
 				Map mapTemp=map.get(key);
 				if(mapTemp.containsKey(record.getBehavior_type()))
 				{
@@ -62,7 +62,7 @@ public class RelationFeature implements IRelationFeature {
 				}
 				
 			}
-			else{   //´ËÉÌÆ·ÓÃ»§ÉĞÎŞÈÎºÎ¼ÇÂ¼
+			else{   //æ­¤å•†å“ç”¨æˆ·å°šæ— ä»»ä½•è®°å½•
 				Map<Integer,Map> mapTemp=new HashMap<Integer,Map>();
 				Map mapTemp2=new HashMap();
 				mapTemp2.put("count", String.valueOf(1));
