@@ -10,7 +10,6 @@ import feature.profile.IUserProfile;
 
 public class ItemFeature implements IItemFeature{
 
-	@Override
 	public List<IItemProfile> getItemFeature(
 			List<UserItemRecord> userItemRecord, List<ItemRecord> itemRecord) {
 		// TODO Auto-generated method stub

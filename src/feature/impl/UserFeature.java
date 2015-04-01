@@ -18,7 +18,6 @@ public class UserFeature implements IUserFeature{
 
 
 
-	@Override
 	public List<IUserProfile> getUserFeature(List<UserItemRecord> records,List<ItemRecord> itemRecord) {
 		// TODO Auto-generated method stub
 		return null;
