@@ -1,12 +1,15 @@
 package feature.profile.impl;
 
+import feature.profile.IRelationProfile;
+
+
 /**
  *用户商品特征 
  * 
  * @author 朝
  * @version 1.0
  */
-public class RelationProfile {
+public class RelationProfile implements IRelationProfile{
 	
 	private int userId;   // 用户id
 	private int itemId;   //商品id

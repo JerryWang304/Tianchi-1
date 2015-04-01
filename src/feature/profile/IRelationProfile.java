@@ -1,5 +1,5 @@
 package feature.profile;
 
-public class IRelationProfile {
+public interface IRelationProfile {
 
 }
