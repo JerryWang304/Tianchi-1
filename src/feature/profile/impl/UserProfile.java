@@ -1,31 +1,39 @@
 package feature.profile.impl;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-import feature.profile.IUserProfile;
 
 
-public class UserProfile implements IUserProfile {
+
+public class UserProfile {
 	
-	int id;//用户ID
+	int userId;//用户ID
 	int click_count[];//四类动作的次数
-	List<Pair> pairs =new ArrayList<Pair>();
-	class Pair//对于每一个种类有这些东西
-	{
-		int item_category;
-		int count[];
-		float conversion[];
-		public Pair(int item_category,int count[],float conversion[])
-		{
-			this.item_category=item_category;
-			count=new int[4];
-			for(int i=0;i<4;i++)
-				this.count[i]=count[i];
-			conversion=new float[4];
-			for(int i=0;i<4;i++)
-				this.conversion[i]=conversion[i];
-		}
+	Map<Integer,Category> pairs =new HashMap<Integer,Category>();
+	
+	
+	int week[]=new int[7];  
+	
+	public int getId() {
+		return userId;
+	}
+	public void setId(int id) {
+		this.userId = id;
+	}
+	public int[] getClick_count() {
+		return click_count;
+	}
+	public void setClick_count(int[] click_count) {
+		this.click_count = click_count;
+	}
+	public Map<Integer, Category> getPairs() {
+		return pairs;
+	}
+	public void setPairs(Map<Integer, Category> pairs) {
+		this.pairs = pairs;
 	}
 	
 

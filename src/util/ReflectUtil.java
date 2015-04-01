@@ -10,7 +10,7 @@ public class ReflectUtil {
 		public static void main(String[] args) throws Exception {
 			FeatureRecord u = new FeatureRecord();
 		
-			getProperty(u);
+			printProperty(u);;
 		}
 
 		@SuppressWarnings("unchecked")

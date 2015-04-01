@@ -4,7 +4,7 @@ import java.util.List;
 
 import util.ItemRecord;
 import util.UserItemRecord;
-import feature.profile.IItemProfile;
+
 import feature.profile.impl.ItemProfile;
 
 public interface IItemFeature {

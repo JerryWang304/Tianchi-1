@@ -11,6 +11,14 @@ public class ItemProfile {
 	private int collectCount; //收藏行为次数
 	private int cartCount; //加购物车行为次数
 	private int purchaseCount; //购买行为次数
+	private double averagePurchase;
+	private double purchaseRateByAllUser;
+	public double getAveragePurchase() {
+		return averagePurchase;
+	}
+	public void setAveragePurchase(double averagePurchase) {
+		this.averagePurchase = averagePurchase;
+	}
 	public int getItemId() {
 		return itemId;
 	}

@@ -8,7 +8,7 @@ import java.util.List;
 
 import util.ItemRecord;
 import util.UserItemRecord;
-import feature.profile.IRelationProfile;
+
 import feature.profile.impl.RelationProfile;
 
 public interface IRelationFeature {

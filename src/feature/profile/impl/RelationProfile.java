@@ -1,6 +1,9 @@
 package feature.profile.impl;
 
-import feature.profile.IRelationProfile;
+import java.util.Map;
+
+import util.ReflectUtil;
+import feature.profile.impl.RelationProfile;
 
 
 /**
@@ -9,10 +12,11 @@ import feature.profile.IRelationProfile;
  * @author 朝
  * @version 1.0
  */
-public class RelationProfile implements IRelationProfile{
+public class RelationProfile {
 	
 	private int userId;   // 用户id
 	private int itemId;   //商品id
+	int catogaryId;
 	private String lastScanTime;   //最近一次浏览行为时间
 	private String lastCollectTime;   //最近一次收藏行为时间
 	private String lastCartTime;   //最近一次加购物车行为时间
@@ -23,6 +27,12 @@ public class RelationProfile implements IRelationProfile{
 	private int purchaseCount; //购买行为次数
 	public int getUserId() {
 		return userId;
+	}
+	public int getCatogaryId() {
+		return catogaryId;
+	}
+	public void setCatogaryId(int catogaryId) {
+		this.catogaryId = catogaryId;
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
@@ -81,5 +91,21 @@ public class RelationProfile implements IRelationProfile{
 	public void setPurchaseCount(int purchaseCount) {
 		this.purchaseCount = purchaseCount;
 	}
+	
+	public String parse2String() {
+		// TODO Auto-generated method stub
+		
+		Map<String,Object> propertys=ReflectUtil.getProperty(this);
+		String line=propertys.get("userId")+","+propertys.get("itemId");
+		for(String key:propertys.keySet())
+		{
+			if(key.equals("userId")||key.equals("itemId"))
+				continue;
+			line+=","+propertys.get(key);
+			
+		}
+		return line;
+	}
+	
 	
 }

@@ -8,11 +8,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import feature.profile.impl.ItemProfile;
+import feature.profile.impl.RelationProfile;
+import feature.profile.impl.UserProfile;
 import util.FeatureRecord;
-import feature.profile.IItemProfile;
-import feature.profile.IRelationProfile;
-import feature.profile.IUserProfile;
 
 public class FeatureUtil {
 	public static List<UserItemRecord> read(String filename){
@@ -73,9 +74,52 @@ public class FeatureUtil {
 		return records;
 	}
 	
-	public  static List<FeatureRecord>  handle(List<IUserProfile> userProfile,List<IItemProfile> itemProfile ,List<IRelationProfile> relationProfile)
+	public  static List<FeatureRecord>  handle(Map<Integer, UserProfile> userProfile,List<ItemProfile> itemProfile ,List<RelationProfile> relationProfile)
 	{
-		return null;
+		List<FeatureRecord> records=new ArrayList<FeatureRecord>();
+		for(RelationProfile rp:relationProfile)
+		{
+			FeatureRecord record=new FeatureRecord();
+			int userId=rp.getUserId();
+			int itemId=rp.getItemId();
+			record.setUser_id(userId);
+			record.setItem_id(itemId);
+			int catogaryId=rp.getCatogaryId();
+			record.count[0]=rp.getScanCount();
+			record.count[1]=rp.getCollectCount();
+			record.count[2]=rp.getCartCount();
+			record.count[3]=rp.getPurchaseCount();
+			if(rp.getLastScanTime()!=null)
+			record.lastInteral[0]=Time2Interal.getInteral(rp.getLastScanTime());
+			if(rp.getLastCollectTime()!=null)
+			record.lastInteral[1]=Time2Interal.getInteral(rp.getLastCollectTime());
+			if(rp.getLastCartTime()!=null)
+			record.lastInteral[2]=Time2Interal.getInteral(rp.getLastCartTime());
+			if(rp.getLastPurchaseTime()!=null)
+			record.lastInteral[3]=Time2Interal.getInteral(rp.getLastPurchaseTime());
+			
+			if(userProfile.get(userId)!=null&&userProfile.get(userId).getPairs().get(catogaryId)!=null)
+				for(int i=0;i<4;i++)
+				{
+				//record.item_count[i]=itemProfile
+				
+					record.category_count[i]=userProfile.get(userId).getPairs().get(catogaryId).count[i];
+				
+				}
+			else
+			{
+				for(int i=0;i<4;i++)
+				{
+				
+					record.category_count[i]=0;
+				
+				}
+				
+			}
+			records.add(record);
+		}
+		
+		return records;
 	}
 	
 	
