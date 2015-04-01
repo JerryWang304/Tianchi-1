@@ -4,23 +4,23 @@ import feature.profile.IRelationProfile;
 
 
 /**
- *ÓÃ»§ÉÌÆ·ÌØÕ÷ 
+ *ç”¨æˆ·å•†å“ç‰¹å¾ 
  * 
- * @author ³¯
+ * @author æœ
  * @version 1.0
  */
 public class RelationProfile implements IRelationProfile{
 	
-	private int userId;   // ÓÃ»§id
-	private int itemId;   //ÉÌÆ·id
-	private String lastScanTime;   //×î½üÒ»´Îä¯ÀÀĞĞÎªÊ±¼ä
-	private String lastCollectTime;   //×î½üÒ»´ÎÊÕ²ØĞĞÎªÊ±¼ä
-	private String lastCartTime;   //×î½üÒ»´Î¼Ó¹ºÎï³µĞĞÎªÊ±¼ä
-	private String lastPurchaseTime;   //×î½üÒ»´Î¹ºÂòĞĞÎªÊ±¼ä
-	private int scanCount; //ä¯ÀÀĞĞÎª´ÎÊı
-	private int collectCount; //ÊÕ²ØĞĞÎª´ÎÊı
-	private int cartCount; //¼Ó¹ºÎï³µĞĞÎª´ÎÊı
-	private int purchaseCount; //¹ºÂòĞĞÎª´ÎÊı
+	private int userId;   // ç”¨æˆ·id
+	private int itemId;   //å•†å“id
+	private String lastScanTime;   //æœ€è¿‘ä¸€æ¬¡æµè§ˆè¡Œä¸ºæ—¶é—´
+	private String lastCollectTime;   //æœ€è¿‘ä¸€æ¬¡æ”¶è—è¡Œä¸ºæ—¶é—´
+	private String lastCartTime;   //æœ€è¿‘ä¸€æ¬¡åŠ è´­ç‰©è½¦è¡Œä¸ºæ—¶é—´
+	private String lastPurchaseTime;   //æœ€è¿‘ä¸€æ¬¡è´­ä¹°è¡Œä¸ºæ—¶é—´
+	private int scanCount; //æµè§ˆè¡Œä¸ºæ¬¡æ•°
+	private int collectCount; //æ”¶è—è¡Œä¸ºæ¬¡æ•°
+	private int cartCount; //åŠ è´­ç‰©è½¦è¡Œä¸ºæ¬¡æ•°
+	private int purchaseCount; //è´­ä¹°è¡Œä¸ºæ¬¡æ•°
 	public int getUserId() {
 		return userId;
 	}

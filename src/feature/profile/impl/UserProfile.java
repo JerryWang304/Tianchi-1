@@ -8,10 +8,10 @@ import feature.profile.IUserProfile;
 
 public class UserProfile implements IUserProfile {
 	
-	int id;//ÓÃ»§ID
-	int click_count[];//ËÄÀà¶¯×÷µÄ´ÎÊı
+	int id;//ç”¨æˆ·ID
+	int click_count[];//å››ç±»åŠ¨ä½œçš„æ¬¡æ•°
 	List<Pair> pairs =new ArrayList<Pair>();
-	class Pair//¶ÔÓÚÃ¿Ò»¸öÖÖÀàÓĞÕâĞ©¶«Î÷
+	class Pair//å¯¹äºæ¯ä¸€ä¸ªç§ç±»æœ‰è¿™äº›ä¸œè¥¿
 	{
 		int item_category;
 		int count[];

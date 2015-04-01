@@ -10,8 +10,6 @@ import java.util.Set;
 import util.ItemRecord;
 import util.UserItemRecord;
 import feature.IRelationFeature;
-import feature.profile.IRelationProfile;
-import feature.profile.IUserProfile;
 import feature.profile.impl.RelationProfile;
 
 /**
